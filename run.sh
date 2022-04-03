@@ -1,5 +1,5 @@
 default:
-	cat ./vv
+	cat ./run.sh
 dist: keystore
 	./mvnw clean package
 

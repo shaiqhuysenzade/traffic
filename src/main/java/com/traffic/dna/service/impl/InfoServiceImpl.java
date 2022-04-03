@@ -25,7 +25,7 @@ public class InfoServiceImpl implements InfoService, AsyncAddInfoService {
     private final ExecutorService executorService = Executors.newFixedThreadPool(5);
 
     @Override
-    public void addDataBulk(List<InfoDto> list) throws InterruptedException {
+    public void addDataBulk(List<InfoDto> list) {
         executorService.execute(() -> {
             list.forEach(this::addSingleData);
         });
