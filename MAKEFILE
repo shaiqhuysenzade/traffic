@@ -1,0 +1,17 @@
+docker_up:
+    @docker-compose up -d
+
+# consul_up:
+#     @./register-services.sh && \
+#      ./register-variables.sh
+
+compile:
+    @cd dna && mvn package
+
+run:
+    @cd dna && java -jar target/dna-1.0-SNAPSHOT.jar
+
+up: docker_up consul_up compile run
+
+down:
+    @docker-compose down
